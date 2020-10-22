@@ -41,7 +41,7 @@ public class Enrollee implements Serializable {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "enrollees", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "enrollee", cascade = CascadeType.ALL)
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<Dependent> dependents = new HashSet<>();
 
