@@ -1,8 +1,29 @@
-# health
+# Health app (for interview)
+REST API (Swagger) - http://localhost:8080/admin/docs (or menu: //Administration/API)
 
-This application was generated using JHipster 6.10.4, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.10.4](https://www.jhipster.tech/documentation-archive/v6.10.4).
+### Build the app to make sure you can download all dependencies
+```
+./gradlew clean build 
+```
+### Run from OS (building if needed) 
+###### Running on http://localhost:8080 (User: admin, Password: admin)
+```
+./gradlew
+```
+
+### Build Docker image 
+```
+./gradlew -Pprod bootJar jibDockerBuild
+```
+### Run from Docker image
+###### if message  "Continue with the new image][yN]" appear, answer "y".
+###### Running on http://localhost:8080 (User: admin, Password: admin)
+```
+docker-compose -f src/main/docker/app.yml up
+```
 
 ## Development
+This application was generated using JHipster 6.10.4, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.10.4](https://www.jhipster.tech/documentation-archive/v6.10.4).
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
 

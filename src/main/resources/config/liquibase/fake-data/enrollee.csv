@@ -1,5 +1,5 @@
 id;name;activation_status;birth_date;phone_number
-1;Black;true;2020-10-21;"+++531)29/1-"
-2;White;false;2020-10-21;"+++++8)"
-3;Nebraska;false;2020-10-22;"+++(74648"
+1;Black;true;2020-10-21;"+1234567890"
+2;White;false;2020-10-21;"+1234567890"
+3;Nebraska;false;2020-10-22;"+1234567890"
 
