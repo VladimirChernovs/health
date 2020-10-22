@@ -1,0 +1,51 @@
+
+application {
+  config {
+    baseName health,
+    applicationType monolith,
+    packageName com.black.mono,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework angular
+    serverPort 8080
+   
+    buildTool gradle
+    cacheProvider ehcache
+    clientFramework	angularX
+    enableTranslation false
+    databaseType sql
+    devDatabaseType	h2Disk
+    prodDatabaseType mysql
+  	}
+  entities *
+}
+
+entity Enrollee {
+	name String required
+    activationStatus Boolean required
+    birthDate LocalDate required
+    phoneNumber String pattern(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/)   
+}
+
+entity Dependent {
+	name String required
+    birthDate LocalDate required
+}
+
+//relationship ManyToOne {
+// 	Dependent{enrollees(name) required} to Enrollee
+//}
+
+relationship OneToMany {
+  Enrollee{dependent} to Dependent{enrollee(name) required}
+}
+
+// Set pagination options
+paginate Dependent with infinite-scroll
+paginate Enrollee with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 

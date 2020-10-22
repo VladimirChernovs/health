@@ -1,0 +1,36 @@
+{
+  "name": "Dependent",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "birthDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "enrollee",
+      "otherEntityRelationshipName": "dependent",
+      "relationshipValidateRules": "required",
+      "relationshipName": "enrollee",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20201022014103",
+  "entityTableName": "dependent",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["health"]
+}
