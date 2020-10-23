@@ -1,7 +1,9 @@
 version: '2'
 services:
   health-sonar:
-    image: sonarqube:8.3.1-community
+#    image: sonarqube:8.5.1-community
+#    image: sonarqube:8.3.1-community
+    image: sonarqube:7.9.4-community
     ports:
       - 9001:9000
       - 9092:9092
